@@ -5,4 +5,5 @@ each post in posts
             | #{ post.created_at } by
             a(href='#') #{ post.author }
         p
-            | #{ post.body }
+            | #{ post.body.slice(0, 200) }
+        a.stretched-link(href=`/${ post.slug }`) Continue reading
