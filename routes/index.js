@@ -30,7 +30,7 @@ router.get('/', function(req, res, next) {
     return new Date(`${year}-${month}-01`);
   });
 
-  res.render('blog', {
+  res.render('index', {
     title: 'She Code Queens',
     links: navigationLinks,
     posts: data.filter((post) => ! post.is_featured),
