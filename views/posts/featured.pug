@@ -7,7 +7,7 @@
             a.text-white.fw-bold(href=`/${featuredPosts[0].slug }`) Continue reading...
 .row.mb-2
     each post, index in featuredPosts
-        if index == 0
+        if index === 0
             - continue
         .col-md-6
             .row.g-0.border.rounded.overflow-hidden.flex-md-row.mb-4.shadow-sm.h-md-250.position-relative

@@ -1,5 +1,12 @@
-extends layout
+extends app
 
 block content
-  h1= title
-  p Welcome to #{title}
+    main.container
+        include posts/featured
+        .row.g-5
+            include posts/index
+            .col-md-4
+                .position-sticky(style='top: 2rem;')
+                    include sidebar/about
+                    include sidebar/archives
+                    include sidebar/profile-links
