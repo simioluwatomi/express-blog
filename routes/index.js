@@ -23,13 +23,19 @@ router.get('/', function(req, res, next) {
     return -1;
   });
 
-  let navigationLinks = [...new Set(data.map((post) => post.category).sort())];
+  let navigationLinks = Array.from(new Set(data.map((post) => post.category).sort()));
+
+  let dates = data.map(function(post) {
+    let [year, month] = post.created_at.split('-');
+    return new Date(`${year}-${month}-01`);
+  });
 
   res.render('blog', {
     title: 'She Code Queens',
     links: navigationLinks,
     posts: data.filter((post) => ! post.is_featured),
-    featuredPosts: data.filter((post) => post.is_featured)
+    featuredPosts: data.filter((post) => post.is_featured),
+    archives: Array.from(new Set(dates))
   });
 
 });
