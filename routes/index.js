@@ -23,7 +23,14 @@ router.get('/', function(req, res, next) {
     return -1;
   });
 
-  let navigationLinks = Array.from(new Set(data.map((post) => post.category).sort()));
+  let navigationSet = new Set();
+  data.forEach((post) => {
+    let categoryObject = JSON.stringify({ category: post.category, slug: post.category_slug });
+    navigationSet.add(categoryObject);
+  });
+  let navigationLinks = Array.from(navigationSet).map(item => JSON.parse(item)).sort((a, b) => a.category.localeCompare(b.category));
+
+  console.log(navigationLinks)
 
   let dates = data.map(function(post) {
     let [year, month] = post.created_at.split('-');
@@ -33,7 +40,7 @@ router.get('/', function(req, res, next) {
   res.render('index', {
     title: 'She Code Queens',
     links: navigationLinks,
-    posts: data.filter((post) => ! post.is_featured),
+    posts: data.filter((post) => !post.is_featured),
     featuredPosts: data.filter((post) => post.is_featured),
     archives: Array.from(new Set(dates))
   });
