@@ -57,7 +57,7 @@ sca_six_express_blog/
 - `bin/`:Contains the file that effects the browser view.
 - `resources/`:Contains the folders for the javascript and scss files.
 - `routes/`:Contains the files for the routes.
-- `views/`:Contains the folders and files that displays the content of the browser.
+- `views/`:Contains the folders and files with the structure and styles of the content of the browser.
 
 ## Usage
 
