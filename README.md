@@ -11,7 +11,6 @@ This repository contains the source code for the She Code Queens Blog. The serve
 Before setting up the codebase, make sure you have the following prerequisites installed:
 
 - Node.js (version 12 or above)
-- MongoDB (version 4 or above)
 - Git
 
 ## Installation
@@ -32,6 +31,12 @@ Before setting up the codebase, make sure you have the following prerequisites i
    npm install
 ```
 
+3. Install the required dependencies:
+
+```bash
+   npx mix
+```
+
 ## Directory Structure
 
 **[Back to Table of Contents](https://github.com/NoDebt-App-Backend/Loan_Prediction_App/tree/main#table-of-contents)**
@@ -49,6 +54,7 @@ sca_six_express_blog/
 └───routes
 └───views
     ├───layouts
+    ├───categories-layout
     ├───posts
     ├───sidebar
 ```
