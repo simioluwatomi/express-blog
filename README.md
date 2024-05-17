@@ -87,6 +87,6 @@ This codebase is released under the GNU General Public License(GPL). Please see 
 
 ## Credits
 
-The Loan Prediction App codebase is being developed by:
+The She Code Queens App codebase is being developed by:
 
 - [Perpetual Meninwa](https://github.com/Perpy-del)
