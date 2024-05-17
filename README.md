@@ -81,12 +81,8 @@ Visit `http://localhost:3000` in your web browser to access the application.
 
 This app is currently developed and maintained by my humble self. At this time, we do not accept external contributions or pull requests. The project is primarily for personal use or demonstration purposes.
 
-## License
-
-This codebase is released under the GNU General Public License(GPL). Please see the LICENSE.md file for more details.
-
 ## Credits
 
-The She Code Queens App codebase is being developed by:
+The She Code Queens Blog codebase is being developed by:
 
 - [Perpetual Meninwa](https://github.com/Perpy-del)
