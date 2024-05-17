@@ -5,8 +5,8 @@ html
         meta(name='viewport' content='width=device-width, initial-scale=1')
         meta(name='description' content='')
         title #{ title }
-        link(href='css/app.css' rel='stylesheet')
-        link(href='css/index.css' rel='stylesheet')
+        link(href='/css/app.css' rel='stylesheet')
+        link(href='/css/index.css' rel='stylesheet')
         link(href='/css/blog.css' rel='stylesheet')
         script(type='text/javascript' src="/js/index.js")
     body
@@ -14,7 +14,7 @@ html
         include categories-layout/header
         // main content
         main.container
-            .row.g-5
+            .row.g-5.mt-1
                 .col-md-8
                     h3.pb-4.mb-4.fst-italic.border-bottom
                         | From #{navItem.category}
@@ -26,8 +26,9 @@ html
                                 |
                                 a(href='#') #{ post.author }
                             p
-                                | #{ post.body.slice(0, 200) }...
+                                | #{ post.body.slice(0, 500) }...
                             a(href=`/${ post.slug }`) Continue reading
+                .col-md-4
                     .position-sticky(style='top: 2rem;')
                         // about
                         include sidebar/about
