@@ -25,7 +25,7 @@ Before setting up the codebase, make sure you have the following prerequisites i
    cd sca_six_express_blog
 ```
 
-3. Install the required dependencies:
+3. Bundle, compile and transpile the scss, bootstrap and pug files using Laravel mix (a wrapper around Webpack):
 
 ```bash
    npm install
