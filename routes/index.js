@@ -28,9 +28,9 @@ router.get('/', function(req, res, next) {
     let categoryObject = JSON.stringify({ category: post.category, slug: post.category_slug });
     navigationSet.add(categoryObject);
   });
+
   let navigationLinks = Array.from(navigationSet).map(item => JSON.parse(item)).sort((a, b) => a.category.localeCompare(b.category));
 
-  console.log(navigationLinks)
 
   let dates = data.map(function(post) {
     let [year, month] = post.created_at.split('-');

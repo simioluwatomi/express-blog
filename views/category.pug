@@ -1,0 +1,16 @@
+extends categories
+
+block content 
+    main.container
+        .row.g-5
+            .col-md-8
+                h3.pb-4.mb-4.fst-italic.border-bottom
+                    | From the Firehose
+                include posts/post-card
+                .position-sticky(style='top: 2rem;')
+                    // about
+                    include sidebar/about
+                    // archives
+                    include sidebar/archives
+                    // social links
+                    include sidebar/social-links

@@ -4,7 +4,7 @@ var fs = require('fs');
 const { parse, isSameDay, isBefore } = require("date-fns");
 
 /* categories */
-router.get('/:category_slug', function (req, res, next) {
+router.get('/:slug', function (req, res, next) {
   
   let rawdata = fs.readFileSync('./database/posts.json');
 
@@ -24,28 +24,16 @@ router.get('/:category_slug', function (req, res, next) {
     return -1;
   });
 
-  let navigationSet = new Set();
-  data.forEach((post) => {
-    let categoryObject = JSON.stringify({ category: post.category, slug: post.category_slug });
-    navigationSet.add(categoryObject);
-  });
-
-  let navigationLinks = Array.from(navigationSet).map(item => JSON.parse(item)).sort((a, b) => a.category.localeCompare(b.category));
-
   let dates = data.map(function (post) {
     let [year, month] = post.created_at.split('-');
     return new Date(`${year}-${month}-01`);
   });
 
-  const navItem = data.find(data => data.category_slug === req.params.category_slug)
+  const blogItem = data.find(item => item.slug === req.params.slug);
 
-  let slugCategoriesData = data.filter((category) => category.category_slug === req.params.category_slug)
-
-  res.render('categories', {
+  res.render('blog', {
     title: 'She Code Queens',
-    links: navigationLinks,
-    posts: slugCategoriesData,
-    navItem: navItem,
+    blog: blogItem,
     archives: Array.from(new Set(dates)),
   });
 });
