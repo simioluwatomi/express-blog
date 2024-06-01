@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 const { parse, isSameDay, isBefore } = require("date-fns");
+const blogController = require("../controllers/blogController");
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -39,5 +41,11 @@ router.get('/', function(req, res, next) {
   });
 
 });
+
+// Route for categories
+router.get('/categories/:slug', blogController.category);
+
+router.get("/posts/:id", blogController.postDetail);
+
 
 module.exports = router;
